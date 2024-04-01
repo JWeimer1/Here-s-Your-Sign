@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Instructions</title>
+	<link rel="stylesheet" href="css/questions.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body class="body">
+	<nav class="navbar navbar-expand-lg navbar-custom ps-5" data-bs-theme="light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html"><i class="bi bi-hand-thumbs-up-fill"></i> Here's Your Sign</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link" href="Instructions.html"><i class="bi bi-file-earmark-fill"></i>
+						Instructions</a>
+					<a class="nav-link" href="Game.html"><i class="bi bi-joystick"></i> Game</a>
+					<a class="nav-link" href="About.html"><i class="bi bi-people-fill"></i> About Us</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<p></p>
+			<p><b> Great Job! You have made it to the next round.</b></p>
+		</div>
+		<div class="row">
+			<p><b> Question #2:</b></p>
+		</div>
+		<p>
+			<h2>
+			<i class="bi bi-alarm"></i>
+			<span id="clock"></span>
+			</h2>
+		</p>
+		<div class="row">
+
+			<div class="col">
+				<img src="/img/2b.gif">
+			</div>
+			<div class="col">
+				<button id="btn-chart" class="btn btn-success">Click to toggle sign chart</button>
+				<p></p>
+				<img id="sign-chart" src="/img/_all.png" class="img-fluid" width="442px" height="221px">
+			</div>
+
+		</div>
+
+
+		<div class="row">
+			<div class="col">
+				<button type="button" id="a-btn" class="btn btn-outline-danger">A. Scenic</button>
+				<button type="button" id="b-btn" class="btn btn-outline-danger">B. Signal</button>
+				<button type="button" id="c-btn" class="btn btn-outline-danger">C. Value</button>
+				<button type="button" id="d-btn" class="btn btn-outline-danger">D. None of the above</button>
+			</div>
+		</div>
+		<div class="col">
+			<div>
+
+			</div>
+		</div>
+
+
+
+		<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+		aria-valuemax="100">
+		<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+	</div>
+		<p class="caution"> Oxygen Left!</p>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="js/show-img.js" type="text/javascript"></script>
+	<script src="js/oxygen.js" type="text/javascript"></script>
+	<script src="js/question2.js" type="text/javascript"></script>
+</body>
+
+</html>
