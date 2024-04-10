@@ -10,8 +10,11 @@ const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
     database: 'postgres',
-    password: 'pass',
+    password: 'postgres',
     port: 5432,
+    ssl: {
+        rejectUnauthorized: false
+    }
 })
  
 // This represents whether or not someone is hosting
