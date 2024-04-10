@@ -7,7 +7,7 @@ function writeClock() {
 }
 
 function timeoutq1() {
-    $.get("/timeout-question1", function(response) {
+    $.get("/timeout-question1?name=" + localStorage.getItem('name'), function(response) {
         window.location.href = response
     })
 }
@@ -28,7 +28,7 @@ $(function(){
 
 
     $("#a-btn").click(function(){
-        $.get("/validate-question1?ans=a", function(response){
+        $.get("/validate-question1?ans=a&name=" + localStorage.getItem('name'), function(response){
             if(response == "false") {
                 oxygen = localStorage.getItem('oxygen')
                 oxygen = oxygen - 10
@@ -39,7 +39,7 @@ $(function(){
         });
     })
     $("#b-btn").click(function(){
-        $.get("/validate-question1?ans=b", function(response){
+        $.get("/validate-question1?ans=b&name=" + localStorage.getItem('name'), function(response){
             if(response == "false") {
                 oxygen = localStorage.getItem('oxygen')
                 oxygen = oxygen - 10
@@ -50,7 +50,7 @@ $(function(){
         });
     })
     $("#c-btn").click(function(){
-        $.get("/validate-question1?ans=c", function(response){
+        $.get("/validate-question1?ans=c&name=" + localStorage.getItem('name'), function(response){
             if(response == "false") {
                 oxygen = localStorage.getItem('oxygen')
                 oxygen = oxygen - 10
@@ -61,7 +61,7 @@ $(function(){
         });
     })
     $("#d-btn").click(function(){
-        $.get("/validate-question1?ans=d", function(response){
+        $.get("/validate-question1?ans=d&name=" + localStorage.getItem('name'), function(response){
             if(response == "false") {
                 oxygen = localStorage.getItem('oxygen')
                 oxygen = oxygen - 10

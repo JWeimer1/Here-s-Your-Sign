@@ -1,3 +1,5 @@
+let names = []
+
 function addPlayer(name, icon) {
     codeBlock = document.getElementById("host2").innerHTML
     codeBlock = codeBlock
@@ -31,6 +33,12 @@ function addPlayer(name, icon) {
 }
 function removePlayer(cardId) {
     document.getElementById(cardId).remove()
+    id = cardId.replace("card-", "")
+    console.log("Removing player " + id)
+    data = {
+        name: id
+    }
+    $.post("/remove-player", data)
 }
 
 function checkQueue() {
@@ -47,8 +55,41 @@ function checkQueue() {
     })
 }
 
+function updateOxygen() {
+    $.get("/load-oxygen", function(response) {
+        for(player_name in response) {
+            barid = "#bar-" + player_name
+            oxygen = response[player_name]
+            $(barid).css('width', oxygen+'%').attr('aria-valuenow', oxygen)
+            console.log("Setting player " + player_name + "'s oxygen to " + oxygen)
+        }
+    })
+}
+
+function loadPlayers() {
+    console.log("Loading players")
+    $.get("/load-players", function(response) {
+        //console.log("Response: " + response)
+        //console.log(response[0])
+        for(let i = 0; i < response.length; i++) {
+            newname = response[i].player_name
+            newicon = response[i].player_icon
+            console.log("i is " + i + " name is " + newname)
+            if(names.includes(newname)) {
+                
+            } else {
+                console.log("Adding player " + newname)
+                addPlayer(newname, newicon)
+                names.push(newname)
+            }
+        }
+    })
+    updateOxygen()
+}
+
 function startQueue() {
-    setInterval(checkQueue, 1000)
+    //setInterval(checkQueue, 1000)
+    setInterval(loadPlayers, 1000)
     
 }
 

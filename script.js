@@ -1,14 +1,26 @@
-const http = require("http");
+$(function(){
+    $("form").submit(function(){
+        const data = {
+            name: $("#Player_Name").val(),
+            icon: $("#Player_Icon").val(),
+            level: $("#Player_Level").val()
+        }
+        console.log("Name: " + data.name + " Icon: " + data.icon + " Level: " + data.level)
+        $.post( "/api/players/create", data, function( response ) {
+            console.log(response);
+        });
+        
 
-let server = http.createServer((request, response) => {
-
-   if (request.url == "/about") {
-       response.write("You accessed /about");
-   } else {
-       response.write("Hello from a Node Server!");
-   }
-
-   response.end();
+        return false;
+    });
+    
 });
 
-server.listen(3000);
+
+
+
+
+
+
+
+

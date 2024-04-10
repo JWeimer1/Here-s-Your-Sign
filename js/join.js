@@ -31,14 +31,21 @@ $(function() {
         updateIcon("SquishyCar.jpg")
     })
     $("#btn-submit").click(function() {
-
+        localStorage.setItem('name', $("#text-displayname").val())
         data = {
-            name: $("#text-displayname").val(),
+            name: localStorage.getItem("name"),
             icon: localStorage.getItem("icon")
         }
-        $.post("/join", data, function(data) {
-            console.log("Succesfully posted data: " + data.name + ", " + data.icon)
-            window.location.href = "waiting.html"
+        str = "/join?name=" + localStorage.getItem("name") + "&icon=" + localStorage.getItem("icon")
+        console.log("Calling: " + str)
+        $.get(str, function(response) {
+            if(response == "name_duplicate") {
+                alert("Sorry, this display name is already in use. Try a different one")
+            } else {
+                console.log("Succesfully posted data: " + data.name + ", " + data.icon)
+                window.location.href = "waiting.html"
+            }
+           
         })
     })
 })

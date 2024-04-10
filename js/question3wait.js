@@ -1,5 +1,5 @@
 function timeoutq3wait() {
-    $.get("/timeout-question3wait", function(response) {
+    $.get("/timeout-question3wait?name=" + localStorage.getItem('name'), function(response) {
         window.location.href = response
     })
 }
