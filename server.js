@@ -1,16 +1,23 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const Pool = require("pg").Pool
-const app = express();
+const app = express()
+require('dotenv').config()
 
 app.use(express.static('public'))
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true}))
+
+const PORT = process.env.PORT || 3000
 
 const pool = new Pool({
-    user: 'postgres',
+    /*user: 'postgres',
     host: 'localhost',
     database: 'postgres',
-    password: 'postgres',
+    password: 'postgres',*/
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_DATABASE,
+    password: process.env.DB_PASSWORD,
     port: 5432,
     ssl: {
         rejectUnauthorized: false
@@ -44,6 +51,7 @@ app.use(express.static("."))
 
 // Host, key = 123
 app.get("/host", function(req, res) {
+    //let ismobile = req.query.ismobile
     if(hosting == 0) {
         hosting = 1
         res.json("host-123.html")
@@ -350,6 +358,6 @@ app.post("/api/players/create", (req,res) => {
 
 
 
-app.listen(3000, () => {
-    console.log("Listening on port 3000");
+app.listen(PORT, () => {
+    console.log("Listening on port " + PORT);
 });
