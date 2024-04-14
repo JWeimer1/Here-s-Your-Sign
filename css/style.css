@@ -70,23 +70,6 @@
   text-align: center;
 }
 
-#host1-mobile {
-  background-color: #27c2ff;
-  margin-top: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-left: 8.5%;
-  margin-right: 8.5%;
-
-  border-style: solid;
-  border-color: #000000;
-  border-width: 5px;
-
-  font-size: 26px;
-  font-family: 'Georgia';
-  text-align: center;
-}
-
 #host1p {
   margin: 0px;
 }
