@@ -1,7 +1,7 @@
 let clockTime
 
 function writeClock() {
-    $("#clock").text(clockTime)
+    $("#clock").text(Math.floor(clockTime))
     //console.log("Writing time", clockTime)
     clockTime = clockTime - 1
 }
