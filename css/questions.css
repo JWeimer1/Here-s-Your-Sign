@@ -58,3 +58,8 @@ button {
 .sign-height {
     height: 262px;
 }
+
+#wrapper, img{
+    width:100%;
+    height: 100%;
+}
