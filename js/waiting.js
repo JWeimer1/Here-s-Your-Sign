@@ -20,7 +20,7 @@ function beginSingleplayer() {
 }
 
 $(function() {
-    if(localStorage.getItem("singleplaye?") == 'True') {
+    if(localStorage.getItem("singleplayer") == 'True') {
         setTimeout(beginSingleplayer, 5000)
     } else {
         setInterval(checkReady, 1000)
