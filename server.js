@@ -34,7 +34,7 @@ let currentQuestion = 0
 let timeq1 = 0, timeq2 = 0, timeq3 = 0
 
 // These represent the total time allotted to each question
-let lengthq1 = 25000, lengthq2 = 30000, lengthq3 = 35000
+let lengthq1 = 27000, lengthq2 = 32000, lengthq3 = 37000
 
 //let queuePlayer_Name = []
 //let queuePlayer_Icon = []
