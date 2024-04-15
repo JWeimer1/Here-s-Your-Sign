@@ -1,0 +1,60 @@
+.body {
+    background-color: #25173e;
+    color: white;
+}
+
+.col {
+    padding: 20px;
+}
+
+.breadcrumb-item {
+    color: gray;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Geneva';
+    font-size: 60px;
+    color: purple;
+}
+
+.navbar-custom {
+    background-image: linear-gradient(90deg, #3143FF 0%, #FF9027 100%);
+    color: white;
+}
+
+.banner {
+    background-color: orange;
+    text-align: center;
+    font-family: 'Geneva';
+    font-size: 60px;
+
+}
+
+button {
+    color: white;
+    background-color: purple;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+
+}
+
+.hot {
+    font-size: 25px;
+    font-family: 'Georgia';
+    text-align: center;
+
+}
+
+.caution {
+    font-size: 25px;
+    color: red;
+    text-align: center;
+}
+
+.sign-height {
+    height: 262px;
+}
