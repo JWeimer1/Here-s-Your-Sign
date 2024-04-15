@@ -13,6 +13,10 @@ function timeq1wait(time) {
 $(function () {
     $.get("/time-question1?singleplayer=" + localStorage.getItem('singleplayer'), function(response) {
         console.log("Question 1 expires", response)
-        timeq1wait(response)
+        if(localStorage.getItem('singleplayer') == "True") {
+            timeq1wait(0)
+        } else {
+            timeq1wait(response)
+        }
     })
 })
