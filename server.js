@@ -195,7 +195,7 @@ function startq1() {
 
 app.get("/time-question1", function(req, res) {
     if(req.query.singleplayer == "True") {
-        res.json(new Date().getTime() + lengthq1)
+        res.json(lengthq1)
     }
     if(timeq1 == 0) {
         timeq1 = new Date().getTime() + lengthq1
@@ -267,7 +267,7 @@ function startq2() {
 
 app.get("/time-question2", function(req, res) {
     if(req.query.singleplayer == "True") {
-        res.json(new Date().getTime() + lengthq2)
+        res.json(lengthq2)
     }
     
     if(timeq2 == 0) {
@@ -339,7 +339,7 @@ function startq3() {
 
 app.get("/time-question3", function(req, res) {
     if(req.query.singleplayer == "True") {
-        res.json(new Date().getTime() + lengthq3)
+        res.json(lengthq3)
     }
     if(timeq3 == 0) {
         //timeq3 = new Date().getTime() + lengthq3
