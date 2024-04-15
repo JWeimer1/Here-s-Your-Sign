@@ -1,5 +1,5 @@
 function timeoutq3wait() {
-    $.get("/timeout-question3wait?name=" + localStorage.getItem('name'), function(response) {
+    $.get("/timeout-question3wait?name=" + localStorage.getItem('name') + "&singleplayer=" + localStorage.getItem('singleplayer'), function(response) {
         window.location.href = response
     })
 }
@@ -11,7 +11,7 @@ function timeq3wait(time) {
 }
 
 $(function () {
-    $.get("/time-question3", function(response) {
+    $.get("/time-question3?singleplayer=" + localStorage.getItem('singleplayer'), function(response) {
         console.log("Question 3 expires", response)
         timeq3wait(response)
     })

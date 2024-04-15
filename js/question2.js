@@ -7,7 +7,7 @@ function writeClock() {
 }
 
 function timeoutq2() {
-    $.get("/timeout-question2?name=" + localStorage.getItem('name'), function(response) {
+    $.get("/timeout-question2?name=" + localStorage.getItem('name') + "&singleplayer=" + localStorage.getItem('singleplayer'), function(response) {
         window.location.href = response
     })
 }
@@ -18,7 +18,7 @@ function timeq2(time) {
 }
 
 $(function(){
-	$.get("/time-question2", function(response) {
+	$.get("/time-question2?singleplayer=" + localStorage.getItem('singleplayer'), function(response) {
         console.log("Question 2 expires", response)
         timeq2(response)
         clockTime = (response) / 1000
@@ -27,7 +27,7 @@ $(function(){
     })
 
     $("#a-btn").click(function(){
-        $.get("/validate-question2?ans=a&name=" + localStorage.getItem('name'), function(response){
+        $.get("/validate-question2?ans=a&name=" + localStorage.getItem('name') + "&singleplayer=" + localStorage.getItem('singleplayer'), function(response){
             if(response == "false") {
                 oxygen = localStorage.getItem('oxygen')
                 oxygen = oxygen - 10
@@ -38,7 +38,7 @@ $(function(){
         });
     })
     $("#b-btn").click(function(){
-        $.get("/validate-question2?ans=b&name=" + localStorage.getItem('name'), function(response){
+        $.get("/validate-question2?ans=b&name=" + localStorage.getItem('name') + "&singleplayer=" + localStorage.getItem('singleplayer'), function(response){
             if(response == "false") {
                 oxygen = localStorage.getItem('oxygen')
                 oxygen = oxygen - 10
@@ -49,7 +49,7 @@ $(function(){
         });
     })
     $("#c-btn").click(function(){
-        $.get("/validate-question2?ans=c&name=" + localStorage.getItem('name'), function(response){
+        $.get("/validate-question2?ans=c&name=" + localStorage.getItem('name') + "&singleplayer=" + localStorage.getItem('singleplayer'), function(response){
             if(response == "false") {
                 oxygen = localStorage.getItem('oxygen')
                 oxygen = oxygen - 10
@@ -60,7 +60,7 @@ $(function(){
         });
     })
     $("#d-btn").click(function(){
-        $.get("/validate-question2?ans=d&name=" + localStorage.getItem('name'), function(response){
+        $.get("/validate-question2?ans=d&name=" + localStorage.getItem('name') + "&singleplayer=" + localStorage.getItem('singleplayer'), function(response){
             if(response == "false") {
                 oxygen = localStorage.getItem('oxygen')
                 oxygen = oxygen - 10

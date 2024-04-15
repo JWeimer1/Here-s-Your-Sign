@@ -8,6 +8,20 @@ function checkReady() {
     })
 }
 
+function beginSingleplayer() {
+    $.get("/ready?singleplayer=True", function(response) {
+        if(response == 0) {
+            
+        } else {
+            window.location.href = response
+        }
+    })
+}
+
 $(function() {
-    setInterval(checkReady, 1000)
+    if(localStorage.getItem("singleplayer?") == "True") {
+        setTimeout(beginSingleplayer, 5000)
+    } else {
+        setInterval(checkReady, 1000)
+    }
 })

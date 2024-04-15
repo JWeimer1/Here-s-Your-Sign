@@ -169,6 +169,10 @@ app.get("/set-ready", function (req, res) {
 })
 
 app.get("/ready", function (req, res) {
+    if(req.query.singleplayer == "True") {
+        res.json("question1.html")
+    }
+
     if(ready == 0) {
         res.json(0)
     } else {
@@ -190,6 +194,9 @@ function startq1() {
 }
 
 app.get("/time-question1", function(req, res) {
+    if(req.query.singleplayer == "True") {
+        res.json(new Date().getTime() + lengthq1)
+    }
     if(timeq1 == 0) {
         timeq1 = new Date().getTime() + lengthq1
         setInterval(function() {startq1()}, 1000)
@@ -206,6 +213,9 @@ app.get("/time-question1", function(req, res) {
 
 // Player ran out of time
 app.get("/timeout-question1", function(req, res) {
+    if(req.query.singleplayer == "True") {
+        res.json("question1_timeout.html")
+    }
     let name = req.query.name
     player_lev[name] = 2
     res.json("question1_timeout.html")
@@ -213,6 +223,9 @@ app.get("/timeout-question1", function(req, res) {
 
 // Player's wait is over
 app.get("/timeout-question1wait", function(req, res) {
+    if(req.query.singleplayer == "True") {
+        res.json("question2.html")
+    }
     let name = req.query.name
     player_lev[name] = 2
     res.json("question2.html")
@@ -221,6 +234,14 @@ app.get("/timeout-question1wait", function(req, res) {
 app.get("/validate-question1", function(req, res) {
     let ans = req.query.ans
     let name = req.query.name
+
+    if(req.query.singleplayer == "True") {
+        if(ans == "c") {
+            res.json("question1_correct.html")
+        }else{
+            res.json("false")
+        }
+    }
 
     if(ans == "c") {
         res.json("question1_correct.html")
@@ -245,6 +266,10 @@ function startq2() {
 }
 
 app.get("/time-question2", function(req, res) {
+    if(req.query.singleplayer == "True") {
+        res.json(new Date().getTime() + lengthq2)
+    }
+    
     if(timeq2 == 0) {
         //timeq2 = new Date().getTime() + lengthq2
         timeq2 = timeq1 + lengthq2 + 5
@@ -261,12 +286,18 @@ app.get("/time-question2", function(req, res) {
 })
 
 app.get("/timeout-question2", function(req, res) {
+    if(req.query.singleplayer == "True") {
+        res.json("question2_timeout.html")
+    }
     let name = req.query.name
     player_lev[name] = 3
     res.json("question2_timeout.html")
 })
 
 app.get("/timeout-question2wait", function(req, res) {
+    if(req.query.singleplayer == "True") {
+        res.json("question3.html")
+    }
     let name = req.query.name
     player_lev[name] = 3
     res.json("question3.html")
@@ -275,6 +306,14 @@ app.get("/timeout-question2wait", function(req, res) {
 app.get("/validate-question2", function(req, res) {
     let ans = req.query.ans
     let name = req.query.name
+
+    if(req.query.singleplayer == "True") {
+        if(ans == "b") {
+            res.json("question2_correct.html")
+        }else{
+            res.json("false")
+        }
+    }
 
     if(ans == "b") {
         res.json("question2_correct.html")
@@ -299,6 +338,9 @@ function startq3() {
 }
 
 app.get("/time-question3", function(req, res) {
+    if(req.query.singleplayer == "True") {
+        res.json(new Date().getTime() + lengthq3)
+    }
     if(timeq3 == 0) {
         //timeq3 = new Date().getTime() + lengthq3
         timeq3 = timeq2 + lengthq3 + 5
@@ -315,6 +357,9 @@ app.get("/time-question3", function(req, res) {
 })
 
 app.get("/timeout-question3", function(req, res) {
+    if(req.query.singleplayer == "True") {
+        res.json("Finished.html")
+    }
     let name = req.query.name
     player_lev[name] = 4
     currentQuestion = 4
@@ -322,6 +367,9 @@ app.get("/timeout-question3", function(req, res) {
 })
 
 app.get("/timeout-question3wait", function(req, res) {
+    if(req.query.singleplayer == "True") {
+        res.json("Finished.html")
+    }
     let name = req.query.name
     player_lev[name] = 4
     res.json("Finished.html")
@@ -330,6 +378,14 @@ app.get("/timeout-question3wait", function(req, res) {
 app.get("/validate-question3", function(req, res) {
     let ans = req.query.ans
     let name = req.query.name
+
+    if(req.query.singleplayer == "True") {
+        if(ans == "a") {
+            res.json("question3_correct.html")
+        }else{
+            res.json("false")
+        }
+    }
 
     if(ans == "a") {
         res.json("question3_correct.html")

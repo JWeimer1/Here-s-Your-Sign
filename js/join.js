@@ -6,6 +6,7 @@ function updateIcon(icon) {
 }
 
 $(function() {
+    localStorage.setItem("singleplayer?", "False")
     $("#btn-icon1").click(function() {
         updateIcon("Bella.jpg")
     })
