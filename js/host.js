@@ -3,7 +3,6 @@ let names = []
 function addPlayer(name, icon) {
     codeBlock = document.getElementById("host2").innerHTML
     if(localStorage.getItem("ismobile?") == "True") {
-        console.log("Is mobile")
         codeBlock = codeBlock
         + '<div class="col-12" id="card-' + name + '">'
             + '<div class="card text-white bg-secondary mb-3 host2-card" style="max-width: 18rem;">'
