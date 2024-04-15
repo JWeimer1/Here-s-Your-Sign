@@ -5,4 +5,8 @@ $(function() {
             window.location.href = response
         })
     })
+    $("#btn-singleplayer").click(function() {
+        localStorage.setItem("singleplayer", "True")
+        window.location.href = "singleplayer.html"
+    })
 })
