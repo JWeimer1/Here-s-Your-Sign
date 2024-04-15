@@ -10,6 +10,7 @@ function checkReady() {
 
 function beginSingleplayer() {
     $.get("/ready?singleplayer=True", function(response) {
+        console.log("Calling ready")
         if(response == 0) {
             
         } else {
@@ -19,7 +20,7 @@ function beginSingleplayer() {
 }
 
 $(function() {
-    if(localStorage.getItem("singleplaye?") == "True") {
+    if(localStorage.getItem("singleplaye?") == 'True') {
         setTimeout(beginSingleplayer, 5000)
     } else {
         setInterval(checkReady, 1000)
